@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h2= pageHeader.title
+    .row
+        .col-xs-12.col-md-6
+          h4
+              |   Item: #{itemname} <br />
+              |   Condition: #{itemcond} <br /><br/>
+          form.form-horizontal(action="", method="post", role="form")
+            .form-group
+              label.col-xs-10.control-label(for="tradingfor") You're trading this item with:
+              | </br></br>
+              .col-xs-12.col-sm-4
+                select#tradingfor.form-control.input-sm(name="tradingfor")
+                  each it in items
+                    option(value=it.name)=it.name
+            | </br></br>
+            .col-xs-10.col-sm-9
+                button.col-xs-7.col-sm-5.btn.btn-default.pull-left(type="submit") Submit
+        .col-xs-12.col-md-4
+    .row
+        .col-sx-12
+            |   &nbsp;

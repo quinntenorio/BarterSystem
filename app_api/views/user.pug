@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    #banner.page-header
+        .row
+            .col-lg-6
+                h1= pageHeader.title
+    .row
+        .error= message
+        .row.list-group
+            h4
+                |   Name: #{user.username} <br />
+                |   Mail: #{user.email} <br />
+            h3
+                |   Items you have up for bartering:
+            each item in user.items
+                .col-xs-4.list-group-item.text-center
+                    a.h2.panel-title(href="/barter/user/" + user._id + "/item/" + item._id)= item.name
+                    a.btn.btn-info.pull-right(href="/barter/user/" + user._id + "/item/" + item._id + "/delete") Delete
+                    |   <br />Condition: #{item.condition}
+                    |   <br/><br/>
+                    - if (item.istrading === true)
+                      .col-xs-12.list-group-item.text-center
+                        p "#{item.trader}" would like to trade for this item!
+                        p They are going to trade '#{item.tradingfor}' for it.
+                        a.btn.btn-info(href="/barter/user/" + user._id + "/item/" + item._id + "/delete") Accept
+                        a.btn.btn-info(type="submit", href="/barter/user/" + user._id + "/item/" + item._id + "/reject") Reject

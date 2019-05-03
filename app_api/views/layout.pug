@@ -1,0 +1,23 @@
+doctype html
+
+html
+  head
+    meta(name='viewport', content='width=device-width, initial=scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/style0.css')
+  body
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          a.btn(href='/logout') Logout
+          a.btn(href="/barter/user/" + userid)= "Profile"
+          a.btn(href="/barter")= "Barter for Items"
+          a.btn(href="/barter/user/" + userid + "/item/new")= "Add Item"
+          a.btn.pull-right(href="/about")= "About"
+    .container
+      block content
+
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')

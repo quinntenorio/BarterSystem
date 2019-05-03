@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    #banner.page-header
+        .row
+            .col-lg-6
+                h1= pageHeader.title
+                small &nbsp;#{pageHeader.strapline}
+    .row
+        .error= message
+        .row.list-group
+            each user in userList
+                each item in user.items
+                    .col-xs-6.list-group-item
+                        h3
+                            |   #{item.name}
+                            small &nbsp;
+                        -if(userid == user._id)
+                          p
+                        -else if(item.istrading === false)
+                          a.btn.btn-primary.pull-right(href="/barter/" + userid + "/item/" + item._id + "/trade") Barter for this!
+                        -else if(item.istrading === true)
+                          a.btn.btn-info.pull-right() Barter underway!
+                        h4
+                            |   Condition: #{item.condition}
+                            small &nbsp;
+                        p
+                        |   Being offered by user "#{user.username}" <br />
+                        |   Willing to trade for: <br />
+                        each trade in item.tradeItems
+                            small &nbsp;
+                            small &nbsp;
+                            small &nbsp;
+                            small &nbsp;
+                            small &nbsp;
+                            small &nbsp;
+                            |   #{trade.name} <br />
+
+        |   <br /><br /><br /><br /><br />

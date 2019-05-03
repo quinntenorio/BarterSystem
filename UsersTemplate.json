@@ -1,0 +1,41 @@
+db.users.save({
+	email: 'true@mines.edu',
+	username: 'blaster',
+	password: '$2b$10$INLgHfXB5Szds7pVur2K4exOCehvl4yhg7vYIKc07Eh2vUej9R0EC',
+	passwordConf: 'pass',
+	items: [{
+		_id: ObjectId(),
+		name: 'Stickers',
+		condition: 'New',
+		istrading: false,
+		tradingfor: '',
+		trader: '',
+		tradeItems: [{
+			name: 'Notebook'
+		}, {
+			name: '#2 Pencil'
+		}]
+	}, {
+		_id: ObjectId(),
+		name: 'Black Pen',
+		condition: 'Used',
+		istrading: false,
+		tradingfor: '',
+		trader: '',
+		tradeItems: [{
+			name: 'Blue Pen'
+		}]
+	}, {
+		_id: ObjectId(),
+		name: 'Folder',
+		condition: 'New',
+		istrading: false,
+		tradingfor: '',
+		trader: '',
+		tradeItems: [{
+			name: 'Loose-Leaf Paper'
+		}, {
+			name: 'Binder'
+		}]
+	}]
+})

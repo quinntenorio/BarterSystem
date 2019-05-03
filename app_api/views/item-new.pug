@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h2= pageHeader.title
+    .row
+        .col-xs-12.col-md-6
+            form.form-horizontal(action="", method="post", role="form")
+                - if(error == "val")
+                    .alert.alert-danger(role="alert") All fields required, please try again
+                - if(error == "trade")
+                    .alert.alert-danger(role="alert") Please include at least one trade item
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="name") Name of Item:
+                    |   <br />
+                    input#name.form-control(name="name")
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="condition") Condition of Item:
+                    |   <br />
+                    input#condition.form-control(name="condition")
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="tradeItems1") Items You're Willing to Trade for this Item:
+                    |   <br />(Please include at least one item, entering it in the first entry below)<br />
+                    //textarea#tradeItems.form-control(name="tradeItems", rows="5")
+                    .form-group.col-xs-12.col-sm-11.pull-right
+                        input#tradeItems1.form-control.input-sm(name="tradeItems1")
+                        label.control-label(for="tradeItems2")
+                        input#tradeItems2.form-control.input-sm(name="tradeItems2")
+                        label.control-label(for="tradeItems3")
+                        input#tradeItems3.form-control.input-sm(name="tradeItems3")
+                        label.control-label(for="tradeItems4")
+                        input#tradeItems4.form-control.input-sm(name="tradeItems4")
+                        label.control-label(for="tradeItems5")
+                        input#tradeItems5.form-control.input-sm(name="tradeItems5")
+
+                .col-xs-10.col-sm-9
+                    button.col-xs-7.col-sm-5.btn.btn-default.pull-right(type="submit") Submit
+        .col-xs-12.col-md-4
+    .row
+        .col-sx-12
+            |   &nbsp;

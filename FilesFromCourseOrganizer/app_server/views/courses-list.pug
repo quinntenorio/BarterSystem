@@ -1,0 +1,26 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    #banner.page-header
+        .row
+            .col-lg-6
+                h1= pageHeader.title
+                    small &nbsp;#{pageHeader.strapline}
+    .row
+        .col-xs-12.col-sm-8
+            .error= message
+            .row.list-group
+                each course in courseList
+                    .col-xs-12.list-group-item
+                        h3
+                            a(href="/course/" + course._id)= course.id
+                            small &nbsp;
+                        h4
+                            span.pull-right= course.name
+                        p
+                        |   Instructor: #{course.instructor}
+                        small &nbsp;
+
+            |   <br /><br /><br /><br /><br />

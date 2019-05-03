@@ -1,0 +1,36 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    .row.page-header: .col-lg-12
+        h1= pageHeader.title
+    .row
+        .col-xs-12.col-sm-8
+            .row.list-group
+                |   Instructor: #{pageHeader.instructor} <br />
+                |   Credits: #{courseDetails[0].credits} <br />
+                |   Where and When: #{courseDetails[0].where}, #{courseDetails[0].when} <br />
+                a.btn.btn-default.pull-left(href="/courses/" + courseID + "/assignments/new") Add assignment
+                |   &nbsp;
+                |   &nbsp;
+                a.btn.btn-default(href="/course/" + courseID) Show all assignments
+                |   &nbsp;&nbsp;
+                a.btn.btn-default(href="/course/" + courseID + "/notSubmitted") Show only unsubmitted assignments
+    .row
+        .col-xs-12.col-md-9
+            .row
+                .col-xs-12
+                    for assignment in assignments
+                        .panel.panel-primary.review-panel
+                            .panel-heading.container
+                                a.assignment.h2.panel-title(href="/courses/" + courseID + "/assignments/" + assignment._id + "/edit")= assignment.name
+                                a.btn.btn-info.pull-right(href = "/courses/" + courseID + "/assignments/" + assignment._id + "/delete") Delete
+                            .panel-body.review-container
+                                .row
+                                    .col-sm-6
+                                        |   Due: #{assignment.duedate}
+                                        |   <br />
+                                        |   Points: #{assignment.points}
+                                        |   <br />
+                                        |   Status: #{assignment.status}

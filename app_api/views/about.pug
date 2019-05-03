@@ -1,0 +1,12 @@
+extends layout
+  
+block content
+    #banner.page-header
+        .row
+            .col-lg-6
+                h1= pageHeader.title
+                small &nbsp;#{pageHeader.strapline}
+    .row
+        p The purpose of this app is to allow student’s at Mines to be able to trade/barter for items! It works like this: to use the app, you must either have an existing account or register for a new account. Once you login or register, you are taken to your account page, where you can see what items you currently have up to be bartered. You can also see what your username is and what email you have associated with your account. If you click on the name of an item, you can edit it. If you click the delete button next to an item, it will delete the item and remove it from the bartering system. At the top of the page, there are link to logout, go to the actual bartering page, or add an item. On the barter page, you can see all the items that all users currently have listed. If you see an item you like, you can click on the button next to the item “Barter for this!”. This will take you to a new page, where you simply choose the item that you’re willing to offer in return for the item you want and click submit. Then the rest is up to the other user (when they log in, they can see on their profile page if someone has said they want to barter for their item. They can then “accept” the offer and it will delete the item from the database.)
+        p We ran into quite a lot of trouble dealing with the login functionality and the actual bartering functionality for our app. We tried our best!
+        p Our team chose option 1. We included a log-in option for our app!

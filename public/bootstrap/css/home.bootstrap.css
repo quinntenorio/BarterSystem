@@ -1,0 +1,124 @@
+/* This CSS is based on a stylesheet provided by Tushar Sonawane. */
+
+@import url("//fonts.googleapis.com/css?family=Oswald|Lato:400,700");
+* {
+box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+body {
+font-family: "Lato", Arial;
+background-color: #FFF;
+padding: 0 15px;
+}
+.login {
+margin: 0px auto;
+width: 300px;
+float: left;
+}
+.login-screen {
+background-color: #9B2020;
+color: #FFF;
+padding: .1px 0px 15px;
+border-radius: 5px;
+margin-top: 3px;
+}
+
+.app-title {
+  font-family: "Oswald";
+text-align: center;
+color: #FFF;
+}
+
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #FFF;
+  color: #9B2020;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background-color: #ECF0F1;
+}
+
+.login-link {
+  font-size: 12px;
+  color: #444;
+  display: block;
+	margin-top: 12px;
+}
+
+.image {
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  z-index: -1;
+}
+
+.about {
+  font-family: "Lato";
+background-color: #9B2020;
+color: #FFF;
+padding: .1px 0px 15px;
+border-radius: 5px;
+margin-top: 3px;
+position: absolute;
+top: 1%;
+left: 27%;
+width: 300px;
+}
+
+p {
+  padding: 5px;
+  font-size: 22px;
+}
+
+.using {
+  font-family: "Lato";
+background-color: #9B2020;
+color: #FFF;
+padding: .1px 0px 15px;
+border-radius: 5px;
+margin-top: 3px;
+position: absolute;
+top: 50%;
+left: 27%;
+width: 300px;
+}

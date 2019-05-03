@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h2= pageHeader.title
+    .row
+        .col-xs-12.col-md-6
+            form.form-horizontal(action="", method="post", role="form")
+                - if(error == "val")
+                    .alert.alert-danger(role="alert") All fields required, please try again
+                - else if(error == "points")
+                    .alert.alert-danger(role="alert") Points must be between 0-100, please try again
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="name") Name:
+                    |   <br />
+                    input#name.form-control(name="name")
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="duedate") Due:
+                    |   <br />
+                    input#duedate.form-control(name="duedate")
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="points") Points:
+                    |   <br />
+                    input#points.form-control(name="points")
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="status") Status:
+                    |   <br />
+                    select#status.form-control.input-sm(name="status")
+                        option Not Started
+                        option In Progress
+                        option Done
+                        option Submitted
+                    small &nbsp;
+                .col-xs-10.col-sm-9
+                    button.col-xs-7.col-sm-5.btn.btn-default.pull-right(type="submit") Submit
+        .col-xs-12.col-md-4
+    .row
+        .col-sx-12
+            |   &nbsp;

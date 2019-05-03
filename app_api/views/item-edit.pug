@@ -1,0 +1,59 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h2= pageHeader.title
+    .row
+        .col-xs-12.col-md-6
+            form.form-horizontal(action="", method="post", role="form")
+                - if(error == "val")
+                    .alert.alert-danger(role="alert") All fields required, please try again
+                - if(error == "trade")
+                    .alert.alert-danger(role="alert") Please include at least one trade item
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="name") Name of Item:
+                    |   <br />
+                    input#name.form-control(name="name" value=itemDetail.name)
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="condition") Condition of Item:
+                    |   <br />
+                    input#condition.form-control(name="condition" value=itemDetail.condition)
+                .form-group.col-xs-10.col-sm-9
+                    label.control-label(for="tradeItems") Items You're Willing to Trade for this Item:
+                    |   <br />(Please include at least one item)<br />
+                    //textarea#tradeItems.form-control(name="tradeItems", rows="5")
+                    .form-group.col-xs-12.col-sm-11.pull-right
+                        label.control-label(for="tradeItems1")
+                        - if(itemDetail.tradeItems[0] != undefined)
+                            input#tradeItems1.form-control.input-sm(name="tradeItems1" value=itemDetail.tradeItems[0].name)
+                        - else
+                            input#tradeItems1.form-control.input-sm(name="tradeItems1")
+                        //input#tradeItems1.form-control.input-sm(name="tradeItems1" value=itemDetail.tradeItems[0].name)
+                        label.control-label(for="tradeItems2")
+                        - if(itemDetail.tradeItems[1] != undefined)
+                            input#tradeItems2.form-control.input-sm(name="tradeItems2" value=itemDetail.tradeItems[1].name)
+                        - else
+                            input#tradeItems2.form-control.input-sm(name="tradeItems2")
+                        label.control-label(for="tradeItems3")
+                        - if(itemDetail.tradeItems[2] != undefined)
+                            input#tradeItems3.form-control.input-sm(name="tradeItems3" value=itemDetail.tradeItems[2].name)
+                        - else
+                            input#tradeItems3.form-control.input-sm(name="tradeItems3")
+                        label.control-label(for="tradeItems4")
+                        - if(itemDetail.tradeItems[3] != undefined)
+                            input#tradeItems4.form-control.input-sm(name="tradeItems4" value=itemDetail.tradeItems[3].name)
+                        - else
+                            input#tradeItems4.form-control.input-sm(name="tradeItems4")
+                        label.control-label(for="tradeItems5")
+                        - if(itemDetail.tradeItems[4] != undefined)
+                            input#tradeItems5.form-control.input-sm(name="tradeItems5" value=itemDetail.tradeItems[4].name)
+                        - else
+                            input#tradeItems5.form-control.input-sm(name="tradeItems5")
+
+                .col-xs-10.col-sm-9
+                    button.col-xs-7.col-sm-5.btn.btn-default.pull-right(type="submit") Submit
+        .col-xs-12.col-md-4
+    .row
+        .col-sx-12
+            |   &nbsp;
